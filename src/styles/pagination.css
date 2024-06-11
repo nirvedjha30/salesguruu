@@ -1,0 +1,58 @@
+.react-paginate {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 30px;
+}
+.pagination-deteils{
+   display: inline-block;
+   margin: 10px 20px;
+}
+
+.react-paginate .pagination-deteils{
+   font-size: 14px;
+   color: #6c757d;
+}
+
+.react-paginate ul {
+    display: inline-block;
+    margin: 10px 20px;
+    padding-left: 0;
+ }
+ 
+ .react-paginate li {
+    display: inline-block;
+    color: #6c757d;
+    cursor: pointer;
+    margin-right: 5px;
+ }
+ 
+  .react-paginate li a {
+      padding: 8px 12px;
+      display: inline-block;
+      font-size: 14px;
+      color: #6c757d;
+      outline: none;
+  }
+
+  .react-paginate li:hover, .react-paginate li:hover a{
+   color: black;
+   background-color: rgb(72 131 191 / 38%);
+  }
+ 
+ .react-paginate li.active {
+    outline: none;
+ }
+
+ .react-paginate li.disabled{
+   cursor: default;
+ }
+ .react-paginate li.disabled:hover, li.disabled:hover a{
+   background-color: transparent;
+   color: #6c757d;
+ }
+
+ .react-paginate li.selected, .react-paginate li.selected a{
+   color: black;
+   background-color: rgb(72 131 191 / 38%);
+ }

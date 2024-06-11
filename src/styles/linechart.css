@@ -1,0 +1,18 @@
+.linechart {
+  height: fit-content;
+  width: 50%;
+}
+.linechart .linechartTitleSection,
+.linechart .linechartChartSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.linechart .linechartTitleSection .linechartTitleInnerSection,
+.linechart .linechartChartSection .linechartChartInnerSection {
+  width: 97%;
+}
+.linechart .linechartTitleSection .linechartTitleInnerSection p {
+  font-weight: bold;
+  color: #495057;
+}

@@ -1,0 +1,115 @@
+.updateFormSection {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.updateFormInnerSection {
+  width: 97%;
+  height: 90%;
+}
+.updateFormInputSection {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+}
+.updateFormInputFirstSection {
+  width: 50%;
+}
+.updateFormInputSecondSection {
+  width: 50%;
+}
+.updateFormInputSection div label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #6c757d;
+}
+.updateFormInputSection div label::before {
+  content: "*";
+  color: red;
+  margin-right: 2px;
+}
+.updateFormInnerSection div input,
+.updateFormInnerSection div select {
+  display: block;
+  margin: 10px 0px;
+  width: -webkit-fill-available;
+  padding: 10px 14px;
+  border-radius: 0.4rem;
+  border: 1px solid rgb(75 136 197 / 50%);
+}
+.updateFormInnerSection div input {
+  height: 17px;
+}
+.updateFormInputSection div select {
+  width: 100%;
+}
+.updateFormInnerSection div input:focus,
+.updateFormInnerSection div select:focus {
+  outline: none;
+  box-shadow: 2px 2px 4px rgba(75, 136, 197, 0.5);
+}
+.updateFormInputSecondSection select {
+  width: 100% !important;
+}
+.updateFormInputThirdSection {
+  width: 100%;
+}
+.updateFormInputThirdSection input {
+  width: -webkit-fill-available;
+}
+.updateFormInputThirdSection label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #6c757d;
+}
+.updateFormInputThirdSection label::before {
+  content: "*";
+  color: red;
+  margin-right: 2px;
+}
+.updateModalBtnSection{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.updateModalBtn {
+  color: #fff;
+  background-color: rgb(72 131 191 / 90%);
+  padding: 10px;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.updateModalBtn:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  background-color: rgb(72 131 191 / 100%);
+}
+.updateTitle {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.updateTitle p{
+  color: #6c757d;
+}
+.errorBorder {
+  border: 1px solid red !important;
+}
+.errorBorder:focus {
+  outline: 1px solid red;
+}
+.errorMsg {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: red;
+}

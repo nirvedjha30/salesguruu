@@ -1,0 +1,19 @@
+.barchart {
+  height: fit-content;
+  width: 50%;
+  border-left: 1px solid rgb(75 136 197 / 50%);
+}
+.barchart .barchartTitleSection,
+.barchart .barchartChartSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.barchart .barchartTitleSection .barchartTitleInnerSection,
+.barchart .barchartChartSection .barchartChartInnerSection {
+  width: 97%;
+}
+.barchart .barchartTitleSection .barchartTitleInnerSection p {
+  font-weight: bold;
+  color: #495057;
+}

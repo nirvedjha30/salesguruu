@@ -1,0 +1,132 @@
+.paymentPlanCard {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  position: relative;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.paymentPlanCardHeadingSection {
+  width: 100%;
+  height: 35%;
+  background: rgb(238, 197, 236);
+  background: linear-gradient(
+    144deg,
+    rgba(238, 197, 236, 1) 0%,
+    rgba(219, 171, 231, 1) 15%,
+    rgba(195, 148, 223, 1) 40%,
+    rgba(189, 133, 228, 1) 75%,
+    rgba(123, 99, 218, 1) 100%
+  );
+  border-radius: 1rem 1rem 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.paymentPlanCardHeadingSection::after {
+  content: "";
+  position: absolute;
+  bottom: -129px;
+  left: -38px;
+  width: 55%;
+  height: 100%;
+  transform: rotate(20deg);
+  background-color: white;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+}
+.paymentPlanCardHeadingSection::before {
+  content: "";
+  position: absolute;
+  bottom: -129px;
+  right: -38px;
+  width: 55%;
+  height: 100%;
+  transform: rotate(160deg);
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.paymentPlanCardHeadingSection p {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.paymentPlanCardSpecialPlan {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 15px;
+}
+.paymentPlanCardServices .point {
+  display: flex;
+  align-items: center;
+}
+.paymentPlanCardServices .point img {
+  width: 16px;
+  height: 16px;
+  justify-self: center;
+  align-self: center;
+}
+.paymentPlanCardServices .point p {
+  margin-left: 10px;
+  color: #6c757d;
+}
+.paymentPlanCardServices {
+  display: grid;
+  gap: 20px;
+  padding: 15px 25px;
+}
+.paymentPlanCardBtn {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.paymentPlanCardBtn button {
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  background: rgb(238, 197, 236);
+  background: linear-gradient(
+    144deg,
+    rgba(238, 197, 236, 1) 0%,
+    rgba(219, 171, 231, 1) 15%,
+    rgba(195, 148, 223, 1) 40%,
+    rgba(189, 133, 228, 1) 75%,
+    rgba(123, 99, 218, 1) 100%
+  );
+}
+.paymentPlanCardPriceSection {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -50px;
+  text-align: center;
+  z-index: 1;
+  left: 35%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.paymentPlanCardPriceSection p {
+  color: black;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 0.9;
+}
+.paymentPlanCardPriceSection p small {
+  font-weight: normal;
+  font-size: 10px;
+}

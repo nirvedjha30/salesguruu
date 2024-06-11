@@ -1,0 +1,102 @@
+.login {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+.loginFormSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+}
+.loginFormInnerSection {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 54px;
+}
+.trackingIcon {
+  width: 70px;
+  height: auto;
+  margin-left: 20px;
+}
+.loginForm h1 {
+  font-family: "PoppinsBold";
+  font-size: 36px;
+  line-height: 54px;
+  padding: 10px 0;
+  font-weight: 100;
+}
+.input {
+  margin-bottom: 20px;
+  height: 45px;
+}
+.inputLabel {
+  width: fit-content;
+  display: grid;
+}
+.inputLabel label {
+  font-size: 14px;
+  padding-right: 5px;
+  width: fit-content;
+  height: 45px;
+  align-content: center;
+}
+.errorMsg {
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-top: 2px;
+  margin-left: 15px;
+  color: red;
+}
+.inputLabel label::before {
+  content: "*";
+  color: red;
+  margin-right: 2px;
+}
+.inputFiled {
+  width: 100%;
+}
+.inputFiled input,.inputFiled select {
+  width: 100%;
+  width: -webkit-fill-available;
+  padding: 10px 24px;
+  border-radius: 24px;
+  border: 1px solid black;
+}
+.errorBorder {
+  border: 1px solid red !important;
+}
+.errorBorder:focus {
+  outline: 1px solid red;
+}
+.forgotPassword {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.forgotPassword a {
+  text-decoration: none;
+  color: #a8a8df;
+  font-family: "PoppinsMedium";
+  font-size: 14px;
+}
+.loginBtn {
+  font-family: "PoppinsSemiBold";
+  max-width: 372px;
+  min-width: 170px;
+  border: none;
+  background: #8a8ca9;
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 16px;
+}
+.loginBanner {
+  width: 55%;
+  height: 100vh;
+}
+.loginBanner img {
+  width: -webkit-fill-available;
+  height: 100vh;
+}

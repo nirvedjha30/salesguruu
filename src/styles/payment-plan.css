@@ -1,0 +1,48 @@
+.paymentPlan {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.paymentPlanSection {
+  width: 83%;
+  height: 100%;
+}
+.paymentPlanInnerSection{
+  width: 100%;
+  height: 100%;
+  min-height: 90.2vh;
+  margin-bottom: 50px;
+}
+.paymentPlanHeadingSection {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.paymentPlanHeadingInnerSection {
+  width: 97%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.paymentPlanHeading {
+  font-size: 20px;
+  font-weight: bold;
+}
+.paymentPlanCardSection {
+  width: 100%;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.paymentPlanCardInnerSection {
+  width: 75%;
+  height: 85%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}

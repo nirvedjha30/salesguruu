@@ -1,0 +1,237 @@
+.sidebar {
+  width: 17%;
+  position: relative;
+  background-image: url("../../public/Designsz.png");
+  box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.sidebarInnerSection{
+  width: 17%;
+  position: fixed;
+  height: 100%;
+  background: rgba(10,76,96,.7);
+}
+.sidebar .sidebarInnerSection .adminLogo {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar .sidebarInnerSection .adminLogo img {
+  width: 35px;
+  height: 35px;
+}
+.titleSection{
+  width: -webkit-fill-available;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 24px;
+}
+.titleInnerSection{
+  width: -webkit-fill-available;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.titleInnerSection a{
+  color: #f8f9fa;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.sidebarProfileSection {
+  width: -webkit-fill-available;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  padding-bottom: 36px;
+}
+.sidebarProfileInnerSection{
+  width: -webkit-fill-available;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.sidebarProfileImageSection img{
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  border-radius: 0.2rem;
+}
+.sidebarProfileDetailSection {
+  width: -webkit-fill-available;
+  height: 100%;
+  display: grid;
+  gap: 3px;
+  position: relative;
+}
+.sidebarProfileDetailSection .profilenamedropbtn{
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.sidebarProfileDetailSection .sidebarProfileName{
+  color: #70809a;
+  font-size: 14px;
+}
+.sidebarProfileDetailSection .sidebarProfileName .profileNameDropdownArrow img{
+  width: 10px;
+  height: 10px;
+  margin-left: 2px;
+}
+.sidebarProfileDetailSection .sidebarProfileName .profileNameDropdownArrow .profileNameDropdownUpArrow{
+  transform: rotate(180deg);
+}
+.profilename-dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 90px;
+  width: max-content;
+  overflow: auto;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.5);
+  z-index: 1;
+  right: 0;
+  top: 20px;
+  left: auto;
+}
+
+.profilename-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+.profilename-dropdown-content button {
+  background-color: transparent;
+  border: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.profilename-dropdown-content a:hover, .profilename-dropdown-content button:hover {
+  color: #3b7ddd;
+}
+
+.sidebarProfileDetailSection .sidebarProfileRole{
+  color: #adb5bd;
+  font-size: 14px;
+}
+.sidebar .sidebarInnerSection .menu .menuDiv {
+  display: flex;
+  align-items: center;
+  width: -webkit-fill-available;
+  border-left: 5px solid transparent;
+}
+.sidebar .sidebarInnerSection .menu .active {
+  background-color: rgb(255 255 255 / 50%);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  border-left: 5px solid #e5f0ff;
+}
+.sidebar .sidebarInnerSection .menu .active .linkText {
+  color: white !important;
+}
+.sidebar .sidebarInnerSection .menu .menuDiv:hover .linkText {
+  color: white !important;
+}
+.sidebar .sidebarInnerSection .menu .menuDiv .linkText {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #b9b9b9;
+  padding: 12px 26px;
+  font-weight: 600;
+  font-size: 14px;
+  width: 100%;
+}
+.sidebar .sidebarInnerSection .menu .menuDiv .linkText img {
+  margin-right: 12px;
+  color: #b9b9b9;
+  width: 18px;
+  height: 18px;
+}
+.sidebar .sidebarInnerSection .menu .menuDiv .productDropdown {
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar .sidebarInnerSection .menu .menuDiv .productDropdown .productDropdownArrow img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  margin: 0;
+}
+.sidebar .sidebarInnerSection .menu .menuDiv .productDropdown .productDropdownArrow .productDropdownUpArrow{
+  transform: rotate(180deg);
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown-content {
+  display: block;
+  position: relative;
+  background-color: transparent;
+  min-width: 160px;
+  overflow: auto;
+  z-index: 1;
+  margin-left: 25px;
+}
+
+.dropdown-content a {
+  color: #b9b9b9;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.confirmBtn {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.yesBtn {
+  background-color: #04aa6d;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: 0;
+  width: fit-content;
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.noBtn {
+  background-color: gray;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: 0;
+  width: fit-content;
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}

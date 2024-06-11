@@ -1,0 +1,118 @@
+.tableSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.tableInnerSection {
+  width: 97%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  overflow-x: scroll;
+}
+.tableInnerSection table .no-data {
+  height: 300px;
+}
+.tableInnerSection table {
+  width: 100%;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.tableInnerSection table,
+.tableInnerSection td,
+.tableInnerSection th {
+  width: -webkit-fill-available;
+  padding: 20px;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+.tableInnerSection th {
+  text-align: left;
+  color: black;
+}
+.tableInnerSection th .tableDecendingOrderBtn,
+.tableInnerSection th .tableAccendingOrderBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.tableInnerSection th .tableDecendingOrderBtn img,
+.tableInnerSection th .tableAccendingOrderBtn img {
+  width: 13px;
+  height: 13px;
+}
+.tableInnerSection td {
+  color: #6c757d;
+}
+.tableSerialNumber {
+  width: 38px;
+}
+.tableAction {
+  text-align: left;
+  width: 76px;
+}
+.tableEditBtn {
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: #1677ff;
+  background-color: transparent;
+  border: 0;
+  width: fit-content;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.tableEditBtn img {
+  width: 20px;
+  height: 20px;
+}
+.tableEditBtn:hover {
+  color: #69b1ff;
+}
+.tableDisableEditBtn {
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: gray;
+  background-color: transparent;
+  border: 0;
+  width: fit-content;
+  margin-right: 10px;
+}
+.tableDisableEditBtn img {
+  width: 20px;
+  height: 20px;
+}
+.tableDeleteBtn {
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: #1677ff;
+  background-color: transparent;
+  border: 0;
+  width: fit-content;
+  cursor: pointer;
+}
+.tableDeleteBtn img {
+  width: 18px;
+  height: 18px;
+}
+.tableDeleteBtn:hover {
+  color: #69b1ff;
+}
+.tableDisableDeleteBtn {
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: gray;
+  background-color: transparent;
+  border: 0;
+  width: fit-content;
+}
+.tableDisableDeleteBtn img {
+  width: 18px;
+  height: 18px;
+}

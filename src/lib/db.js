@@ -1,0 +1,2 @@
+const { NEXT_PUBLIC_username, NEXT_PUBLIC_password } = process.env
+export const connectionStr = "mongodb+srv://"+NEXT_PUBLIC_username+":"+NEXT_PUBLIC_password+"@cluster0.ltpuvrd.mongodb.net/ecomminDev?retryWrites=true&w=majority&appName=Cluster0"

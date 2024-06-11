@@ -1,0 +1,236 @@
+.searchSection {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchInnerSection {
+  width: 97%;
+  height: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filterSection {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.filterSection .filterIcon {
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.filterSection .filterdropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.itemPerPageFilterSection .itemPerPageDropBtn {
+  width: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 5px;
+  border: 1px solid rgb(75 136 197 / 50%);
+  color: #6c757d;
+}
+
+.itemPerPageFilterSection .itemPerPageDropBtn span img {
+  width: 9px;
+  height: 9px;
+}
+.itemPerPageFilterSection .itemPerPageDropBtn span .itemPerPageDropdownUpArrow {
+  transform: rotate(180deg);
+}
+
+.filter-dropdown-content,
+.itemperpage-dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 90px;
+  width: max-content;
+  max-height: 200px;
+  overflow: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  left: 0;
+  top: 35px;
+  padding: 10px 0px;
+}
+
+.inner-dropdown-content {
+  display: block;
+  position: relative;
+  background-color: transparent;
+  min-width: 90px;
+  width: max-content;
+  max-height: 200px;
+  z-index: 1;
+}
+
+.gender-dropdown-content button {
+  color: #6c757d;
+  padding: 5px 25px;
+  text-decoration: none;
+  display: block;
+}
+
+.filter-dropdown-content,
+.itemperpage-dropdown-content {
+  left: auto;
+  right: auto;
+}
+
+.filter-dropdown-content a,
+.itemperpage-dropdown-content a {
+  color: #6c757d;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+.filter-dropdown-content button,
+.itemperpage-dropdown-content button {
+  background-color: transparent;
+  border: none;
+  color: #6c757d;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+}
+
+.filter-dropdown-content a,
+.filter-dropdown-content button {
+  text-align: left;
+  padding: 5px 25px;
+}
+
+.filter-dropdown-content .innerFilterDropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #6c757d;
+}
+
+.filter-dropdown-content .innerFilterDropdown .innerFilterDropdownArrow img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6px;
+  height: 6px;
+  margin: 0;
+}
+
+.filter-dropdown-content
+  .innerFilterDropdown
+  .innerFilterDropdownArrow
+  .innerFilterDropdownUpArrow {
+  transform: rotate(180deg);
+}
+
+.filter-dropdown-content .noFilterData {
+  color: #6c757d;
+  padding: 15px 25px;
+  display: block;
+  font-size: 11px;
+  text-align: center;
+  line-height: 0.8rem;
+}
+
+.filter-dropdown-content .filterHeading {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 3px;
+  padding: 0px 10px;
+  color: #6c757d;
+}
+
+.filter-dropdown-content a:hover,
+.filter-dropdown-content button:hover,
+.itemperpage-dropdown-content a:hover,
+.itemperpage-dropdown-content button:hover {
+  color: #3b7ddd;
+}
+
+.filter-dropdown-content .active {
+  color: #3b7ddd;
+}
+
+.filterSection .filterIcon .filterdropbtn img {
+  width: 20px;
+  height: 20px;
+}
+.filterSection .filterIcon .filterdropbtn p {
+  font-size: 14px;
+  color: #6c757d;
+}
+.filterSection .itemPerPageFilterSection {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+.filterSection .itemPerPageFilterSection p {
+  font-size: 14px;
+  color: #6c757d;
+}
+.itemsPerPageFilter {
+  height: 23px;
+  width: fit-content;
+  outline: none;
+  color: #6c757d;
+  cursor: pointer;
+  border: 1px solid rgb(75 136 197 / 50%);
+}
+.tableSearch {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.tableSearch label {
+  font-size: 14px;
+  font-weight: bold;
+}
+.tableSearch input {
+  height: 20px;
+  width: 200px;
+  border: 1px solid rgb(75 136 197 / 50%);
+  background-color: transparent;
+  padding: 5px;
+}
+.tableSearch input:focus {
+  outline: none;
+  box-shadow: 2px 2px 4px rgba(75, 136, 197, 0.5);
+}
+.tableSearch img {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 5px;
+}
