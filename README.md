@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Project Setup
+
+1. Then copy the .env.example file and rename it to .env.local In this file you have to add your database connection information.
+2. Then setup your application environment.
+3. Go to the project dir and run this command "npm i".
+    "npm i" This installs all dependencies. So after that your development environment is ready to use.
+4. Go to the project dir and run this command "npm run dev".
+5. Open http://localhost:3000 with your browser to see the result.
+
 ## Getting Started
 
 First, run the development server:
