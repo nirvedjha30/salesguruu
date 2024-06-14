@@ -1,17 +1,18 @@
 "use client"
 import dynamic from "next/dynamic"
 import "chart.js/auto"
-import "./../styles/barchart.css"
+// import "./../styles/barchart.css"
+import "./../styles/piechart.css"
 import { useEffect, useState } from "react"
-export default function BarChart(props) {
+export default function PieChart(props) {
   // ========================Chart Loading==============================
   const [chartLoad, setChartLoad] = useState(false)
   // ===================================================================
 
-  const Bar = dynamic(() => import("react-chartjs-2").then((mod) => mod.Bar), {
+  const Pie = dynamic(() => import("react-chartjs-2").then((mod) => mod.Pie), {
     ssr: false,
   })
-  const barchartdata = {
+  const piechartdata = {
     labels: ["Account Manager", "Vendor", "Employee", "Product"],
     datasets: [
       {
@@ -47,15 +48,15 @@ export default function BarChart(props) {
   })
 
   return (
-    <div className="barchart">
-      <div className="barchartTitleSection">
-        <div className="barchartTitleInnerSection">
-          <p>Bar Chart</p>
+    <div className="piechart">
+      <div className="piechartTitleSection">
+        <div className="piechartTitleInnerSection">
+          <p>Pie Chart</p>
         </div>
       </div>
-      <div className="barchartChartSection">
-        <div className="barchartChartInnerSection">
-        {chartLoad ? <Bar data={barchartdata} /> : ""}
+      <div className="piechartChartSection">
+        <div className="piechartChartInnerSection">
+          {chartLoad ? <Pie data={piechartdata} /> : ""}
         </div>
       </div>
     </div>

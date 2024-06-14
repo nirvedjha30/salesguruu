@@ -7,7 +7,7 @@
   width: 83%;
   height: 100%;
 }
-.addProductInnerSection{
+.addProductInnerSection {
   width: 100%;
   height: 100%;
   min-height: 100vh;
@@ -37,17 +37,19 @@
   width: 100%;
   height: 100%;
 }
-.addProductFormInputThirdSection{
+.addProductFormInputThirdSection {
   width: 50%;
 }
-.addProductFormInputThirdSection input,.addProductFormInputThirdSection select {
+.addProductFormInputThirdSection input,
+.addProductFormInputThirdSection select {
   width: -webkit-fill-available;
 }
 .addProductFormInputThirdSection label {
   display: block;
   font-size: 14px;
   font-weight: bold;
-  margin-top: 15px;
+  /* margin-top: 15px; */
+  color: #6c757d;
 }
 .addProductFormInputThirdSection label::before {
   content: "*";
@@ -58,6 +60,7 @@
   display: block;
   font-size: 14px;
   font-weight: bold;
+  color: #6c757d;
 }
 .addProductFormInputSection div label::before {
   content: "*";
@@ -67,14 +70,22 @@
 .addProductFormInnerSection div input,
 .addProductFormInnerSection div select {
   display: block;
-  margin: 15px 0px;
+  margin: 10px 0px;
   width: -webkit-fill-available;
-  padding: 10px 24px;
-  border-radius: 0.5rem;
-  border: 1px solid black;
+  padding: 10px 14px;
+  border-radius: 0.4rem;
+  border: 1px solid rgb(75 136 197 / 50%);
+}
+.addProductFormInnerSection div input {
+  height: 17px;
 }
 .addProductFormInnerSection div select {
   width: -webkit-fill-available;
+}
+.addProductFormInnerSection div input:focus,
+.addProductFormInnerSection div select:focus {
+  outline: none;
+  box-shadow: 2px 2px 4px rgba(75, 136, 197, 0.5);
 }
 .addProductBtn {
   color: #fff;
@@ -83,9 +94,21 @@
   border: none;
   border-radius: 0.2rem;
   font-size: 14px;
+  margin-top: 10px;
   cursor: pointer;
 }
-.addProductBtn:hover{
+.addProductBtn:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   background-color: rgb(72 131 191 / 100%);
+}
+.errorBorder{
+  border: 1px solid red !important;
+}
+.errorBorder:focus{
+  outline: 1px solid red;
+}
+.errorMsg{
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: red;
 }

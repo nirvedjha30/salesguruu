@@ -1,0 +1,22 @@
+.piechart {
+  height: fit-content;
+  /* width: 50%; */
+  width: 28%;
+}
+.piechart .piechartTitleSection,
+.piechart .piechartChartSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.piechart .piechartTitleSection .piechartTitleInnerSection {
+  width: 97%;
+}
+.piechart .piechartChartSection .piechartChartInnerSection {
+  /* width: 73%; */
+  width: 100%;
+}
+.piechart .piechartTitleSection .piechartTitleInnerSection p {
+  font-weight: bold;
+  color: #495057;
+}
