@@ -21,6 +21,7 @@ import Image from "next/image"
 import AccendingSelectArrowIcon from "../../../public/accending-select-arrow.svg"
 import DecendingSelectArrowIcon from "../../../public/decending-select-arrow.svg"
 import DisableSelectArrowIcon from "../../../public/disable-select-arrow.svg"
+import PieChart from "@/components/PieChart"
 
 const { NEXT_PUBLIC_url } = process.env
 
@@ -306,54 +307,6 @@ export default function Page() {
 
   // ==============================================================
 
-  // ============================Line-Chart========================
-  const Line = dynamic(() => import("react-chartjs-2").then((mod) => mod.Line), {
-    ssr: false,
-  })
-  const linechartdata = {
-    labels: ["Account Manager", "Vendor", "Employee", "Product"],
-    datasets: [
-      {
-        label: "Line Chart",
-        data: [accountManagers, vendors, employees, products],
-        fill: false,
-        borderColor: "rgb(75, 192, 192)",
-        tension: 0.1,
-      },
-    ],
-  }
-
-  //============================Bar-Chart=====================================
-  const Bar = dynamic(() => import("react-chartjs-2").then((mod) => mod.Bar), {
-    ssr: false,
-  })
-  const barchartdata = {
-    labels: ["Account Manager", "Vendor", "Employee", "Product"],
-    datasets: [
-      {
-        label: "Bar Chart",
-        data: [accountManagers, vendors, employees, products],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
-      },
-    ],
-  }
-
   return (
     <div>
       {/* <p>Dashboard Page</p> */}
@@ -417,247 +370,279 @@ export default function Page() {
             </div>
 
             <div className="chartSection">
-              {/* LineChart */}
-              <LineChart
-                accountManagers={accountManagers}
-                vendors={vendors}
-                employees={employees}
-                products={products}
-              />
+              <div className="chartInnerSection">
+                {/* LineChart */}
+                <LineChart
+                  accountManagers={accountManagers}
+                  vendors={vendors}
+                  employees={employees}
+                  products={products}
+                />
 
-              {/* BarChart */}
-              <BarChart
-                accountManagers={accountManagers}
-                vendors={vendors}
-                employees={employees}
-                products={products}
-              />
+                {/* BarChart */}
+                <BarChart
+                  accountManagers={accountManagers}
+                  vendors={vendors}
+                  employees={employees}
+                  products={products}
+                />
+              </div>
             </div>
 
             <div className="productTableSection">
-              <div className="productTable">
-                <div className="productTableTitleSection">
-                  <div className="productTableTitleInnerSection">
-                    <p>Products</p>
-                  </div>
-                </div>
-
-                {/* Search Product */}
-                <Search
-                  search={search}
-                  table={"Product"}
-                  setSearch={setSearch}
-                  searchFun={searchFun}
-                  categoryFilter={(e, categoryName) => categoryFilter(e, categoryName)}
-                  categoryFilterActive={categoryFilterActive}
-                  allCategoryFilter={allCategoryFilter}
-                  allCategoryFilterActive={allCategoryFilterActive}
+              <div className="productTableInnerSection">
+                {/* PieChart */}
+                <PieChart
+                  accountManagers={accountManagers}
+                  vendors={vendors}
+                  employees={employees}
+                  products={products}
                 />
 
                 {/* Product Table */}
-                <div className="tableSection">
-                  <div className="tableInnerSection">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th className="tableSerialNumber">S.No</th>
-                          {/* <th>Name</th> */}
-                          {nameAccendingOrderActive == false && nameDecendingOrderActive == true ? (
-                            <th onClick={(e) => nameAccendingOrder(e)}>
-                              <div className="tableAccendingOrderBtn">
-                                <p>Name</p>
-                                <Image
-                                  src={DecendingSelectArrowIcon}
-                                  alt="DecendingSelectArrowIcon"
-                                />
-                              </div>
-                            </th>
-                          ) : nameAccendingOrderActive == true &&
-                            nameDecendingOrderActive == false ? (
-                            <th onClick={(e) => nameDecendingOrder(e)}>
-                              <div className="tableDecendingOrderBtn">
-                                <p>Name</p>
-                                <Image
-                                  src={AccendingSelectArrowIcon}
-                                  alt="AccendingSelectArrowIcon"
-                                />
-                              </div>
-                            </th>
-                          ) : (
-                            <th onClick={(e) => nameAccendingOrder(e)}>
-                              <div className="tableAccendingOrderBtn">
-                                <p>Name</p>
-                                <Image src={DisableSelectArrowIcon} alt="DisableSelectArrowIcon" />
-                              </div>
-                            </th>
-                          )}
-                          {/* <th>Price</th> */}
-                          {priceAccendingOrderActive == false &&
-                          priceDecendingOrderActive == true ? (
-                            <th onClick={(e) => priceAccendingOrder(e)}>
-                              <div className="tableAccendingOrderBtn">
-                                <p>Price</p>
-                                <Image
-                                  src={DecendingSelectArrowIcon}
-                                  alt="DecendingSelectArrowIcon"
-                                />
-                              </div>
-                            </th>
-                          ) : priceAccendingOrderActive == true &&
-                            priceDecendingOrderActive == false ? (
-                            <th onClick={(e) => priceDecendingOrder(e)}>
-                              <div className="tableDecendingOrderBtn">
-                                <p>Price</p>
-                                <Image
-                                  src={AccendingSelectArrowIcon}
-                                  alt="AccendingSelectArrowIcon"
-                                />
-                              </div>
-                            </th>
-                          ) : (
-                            <th onClick={(e) => priceAccendingOrder(e)}>
-                              <div className="tableAccendingOrderBtn">
-                                <p>Price</p>
-                                <Image src={DisableSelectArrowIcon} alt="DisableSelectArrowIcon" />
-                              </div>
-                            </th>
-                          )}
-                          {/* <th>Vendor</th> */}
-                          {vendorIdAccendingOrderActive == false &&
-                          vendorIdDecendingOrderActive == true ? (
-                            <th onClick={(e) => vendorIdAccendingOrder(e)}>
-                              <div className="tableAccendingOrderBtn">
-                                <p>Vendor</p>
-                                <Image
-                                  src={DecendingSelectArrowIcon}
-                                  alt="DecendingSelectArrowIcon"
-                                />
-                              </div>
-                            </th>
-                          ) : vendorIdAccendingOrderActive == true &&
-                            vendorIdDecendingOrderActive == false ? (
-                            <th onClick={(e) => vendorIdDecendingOrder(e)}>
-                              <div className="tableDecendingOrderBtn">
-                                <p>Vendor</p>
-                                <Image
-                                  src={AccendingSelectArrowIcon}
-                                  alt="AccendingSelectArrowIcon"
-                                />
-                              </div>
-                            </th>
-                          ) : (
-                            <th onClick={(e) => vendorIdAccendingOrder(e)}>
-                              <div className="tableAccendingOrderBtn">
-                                <p>Vendor</p>
-                                <Image src={DisableSelectArrowIcon} alt="DisableSelectArrowIcon" />
-                              </div>
-                            </th>
-                          )}
-                          {/* <th>Quantity</th> */}
-                          {quantityAccendingOrderActive == false &&
-                          quantityDecendingOrderActive == true ? (
-                            <th onClick={(e) => quantityAccendingOrder(e)}>
-                              <div className="tableAccendingOrderBtn">
-                                <p>Quantity</p>
-                                <Image
-                                  src={DecendingSelectArrowIcon}
-                                  alt="DecendingSelectArrowIcon"
-                                />
-                              </div>
-                            </th>
-                          ) : quantityAccendingOrderActive == true &&
-                            quantityDecendingOrderActive == false ? (
-                            <th onClick={(e) => quantityDecendingOrder(e)}>
-                              <div className="tableDecendingOrderBtn">
-                                <p>Quantity</p>
-                                <Image
-                                  src={AccendingSelectArrowIcon}
-                                  alt="AccendingSelectArrowIcon"
-                                />
-                              </div>
-                            </th>
-                          ) : (
-                            <th onClick={(e) => quantityAccendingOrder(e)}>
-                              <div className="tableAccendingOrderBtn">
-                                <p>Quantity</p>
-                                <Image src={DisableSelectArrowIcon} alt="DisableSelectArrowIcon" />
-                              </div>
-                            </th>
-                          )}
-                          <th>Description</th>
-                          <th>Category</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {productsTable != "" ? (
-                          productsTable
-                            .filter((item) => {
-                              if (search.toLowerCase() === "") {
-                                return item
-                              } else {
-                                if (item.name.toLowerCase().match(search.toLowerCase())) {
-                                  return item.name.toLowerCase().includes(search.toLowerCase())
-                                } else if (item.price.toString().match(search.toString())) {
-                                  return item.price.toString().includes(search.toString())
-                                } else if (
-                                  item.vendorId.toLowerCase().match(search.toLowerCase())
-                                ) {
-                                  return item.vendorId.toLowerCase().includes(search.toLowerCase())
-                                } else if (item.quantity.toString().match(search.toString())) {
-                                  return item.quantity.toString().includes(search.toString())
-                                } else if (
-                                  item.productDescription.toLowerCase().match(search.toLowerCase())
-                                ) {
-                                  return item.productDescription
-                                    .toLowerCase()
-                                    .includes(search.toLowerCase())
-                                } else if (
-                                  item.category.toLowerCase().match(search.toLowerCase())
-                                ) {
-                                  return item.category.toLowerCase().includes(search.toLowerCase())
-                                }
-                              }
-                            })
-                            .slice(itemOffset, endOffset)
-                            .map((item, index) => (
-                              <tr key={index}>
-                                <td>{endOffset - itemsPerPage + index + 1}</td>
-                                <td>{item.name}</td>
-                                <td>{item.price}</td>
-                                <td>{item.vendorId}</td>
-                                <td>{item.quantity}</td>
-                                <td>{item.productDescription}</td>
-                                <td>{item.category}</td>
-                              </tr>
-                            ))
-                        ) : (
-                          <tr className="no-data">
-                            <td colSpan={8} align="center">
-                              No Product
-                            </td>
-                          </tr>
-                        )}
-                      </tbody>
-                    </table>
+                <div className="productTable">
+                  <div className="productTableTitleSection">
+                    <div className="productTableTitleInnerSection">
+                      <p>Products</p>
+                    </div>
                   </div>
-                </div>
-                <div className="react-paginate">
-                  <div className="pagination-deteils">
-                    <p>
-                      Showing {endOffset - itemsPerPage + 1} to{" "}
-                      {items.length >= endOffset ? endOffset : items.length} of {items.length}{" "}
-                      entries
-                    </p>
-                  </div>
-                  <ReactPaginate
-                    breakLabel="..."
-                    nextLabel="Next"
-                    onPageChange={handlePageClick}
-                    pageRangeDisplayed={5}
-                    pageCount={pageCount}
-                    previousLabel="Previous"
-                    renderOnZeroPageCount={null}
+
+                  {/* Search Product */}
+                  <Search
+                    search={search}
+                    table={"Product"}
+                    setSearch={setSearch}
+                    searchFun={searchFun}
+                    categoryFilter={(e, categoryName) => categoryFilter(e, categoryName)}
+                    categoryFilterActive={categoryFilterActive}
+                    allCategoryFilter={allCategoryFilter}
+                    allCategoryFilterActive={allCategoryFilterActive}
                   />
+
+                  {/* Product Table */}
+                  <div className="tableSection">
+                    <div className="tableInnerSection">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th className="tableSerialNumber">S.No</th>
+                            {/* <th>Name</th> */}
+                            {nameAccendingOrderActive == false &&
+                            nameDecendingOrderActive == true ? (
+                              <th onClick={(e) => nameAccendingOrder(e)}>
+                                <div className="tableAccendingOrderBtn">
+                                  <p>Name</p>
+                                  <Image
+                                    src={DecendingSelectArrowIcon}
+                                    alt="DecendingSelectArrowIcon"
+                                  />
+                                </div>
+                              </th>
+                            ) : nameAccendingOrderActive == true &&
+                              nameDecendingOrderActive == false ? (
+                              <th onClick={(e) => nameDecendingOrder(e)}>
+                                <div className="tableDecendingOrderBtn">
+                                  <p>Name</p>
+                                  <Image
+                                    src={AccendingSelectArrowIcon}
+                                    alt="AccendingSelectArrowIcon"
+                                  />
+                                </div>
+                              </th>
+                            ) : (
+                              <th onClick={(e) => nameAccendingOrder(e)}>
+                                <div className="tableAccendingOrderBtn">
+                                  <p>Name</p>
+                                  <Image
+                                    src={DisableSelectArrowIcon}
+                                    alt="DisableSelectArrowIcon"
+                                  />
+                                </div>
+                              </th>
+                            )}
+                            {/* <th>Price</th> */}
+                            {priceAccendingOrderActive == false &&
+                            priceDecendingOrderActive == true ? (
+                              <th onClick={(e) => priceAccendingOrder(e)}>
+                                <div className="tableAccendingOrderBtn">
+                                  <p>Price</p>
+                                  <Image
+                                    src={DecendingSelectArrowIcon}
+                                    alt="DecendingSelectArrowIcon"
+                                  />
+                                </div>
+                              </th>
+                            ) : priceAccendingOrderActive == true &&
+                              priceDecendingOrderActive == false ? (
+                              <th onClick={(e) => priceDecendingOrder(e)}>
+                                <div className="tableDecendingOrderBtn">
+                                  <p>Price</p>
+                                  <Image
+                                    src={AccendingSelectArrowIcon}
+                                    alt="AccendingSelectArrowIcon"
+                                  />
+                                </div>
+                              </th>
+                            ) : (
+                              <th onClick={(e) => priceAccendingOrder(e)}>
+                                <div className="tableAccendingOrderBtn">
+                                  <p>Price</p>
+                                  <Image
+                                    src={DisableSelectArrowIcon}
+                                    alt="DisableSelectArrowIcon"
+                                  />
+                                </div>
+                              </th>
+                            )}
+                            {/* <th>Vendor</th> */}
+                            {vendorIdAccendingOrderActive == false &&
+                            vendorIdDecendingOrderActive == true ? (
+                              <th onClick={(e) => vendorIdAccendingOrder(e)}>
+                                <div className="tableAccendingOrderBtn">
+                                  <p>Vendor</p>
+                                  <Image
+                                    src={DecendingSelectArrowIcon}
+                                    alt="DecendingSelectArrowIcon"
+                                  />
+                                </div>
+                              </th>
+                            ) : vendorIdAccendingOrderActive == true &&
+                              vendorIdDecendingOrderActive == false ? (
+                              <th onClick={(e) => vendorIdDecendingOrder(e)}>
+                                <div className="tableDecendingOrderBtn">
+                                  <p>Vendor</p>
+                                  <Image
+                                    src={AccendingSelectArrowIcon}
+                                    alt="AccendingSelectArrowIcon"
+                                  />
+                                </div>
+                              </th>
+                            ) : (
+                              <th onClick={(e) => vendorIdAccendingOrder(e)}>
+                                <div className="tableAccendingOrderBtn">
+                                  <p>Vendor</p>
+                                  <Image
+                                    src={DisableSelectArrowIcon}
+                                    alt="DisableSelectArrowIcon"
+                                  />
+                                </div>
+                              </th>
+                            )}
+                            {/* <th>Quantity</th> */}
+                            {quantityAccendingOrderActive == false &&
+                            quantityDecendingOrderActive == true ? (
+                              <th onClick={(e) => quantityAccendingOrder(e)}>
+                                <div className="tableAccendingOrderBtn">
+                                  <p>Quantity</p>
+                                  <Image
+                                    src={DecendingSelectArrowIcon}
+                                    alt="DecendingSelectArrowIcon"
+                                  />
+                                </div>
+                              </th>
+                            ) : quantityAccendingOrderActive == true &&
+                              quantityDecendingOrderActive == false ? (
+                              <th onClick={(e) => quantityDecendingOrder(e)}>
+                                <div className="tableDecendingOrderBtn">
+                                  <p>Quantity</p>
+                                  <Image
+                                    src={AccendingSelectArrowIcon}
+                                    alt="AccendingSelectArrowIcon"
+                                  />
+                                </div>
+                              </th>
+                            ) : (
+                              <th onClick={(e) => quantityAccendingOrder(e)}>
+                                <div className="tableAccendingOrderBtn">
+                                  <p>Quantity</p>
+                                  <Image
+                                    src={DisableSelectArrowIcon}
+                                    alt="DisableSelectArrowIcon"
+                                  />
+                                </div>
+                              </th>
+                            )}
+                            <th>Description</th>
+                            <th>Category</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {productsTable != "" ? (
+                            productsTable
+                              .filter((item) => {
+                                if (search.toLowerCase() === "") {
+                                  return item
+                                } else {
+                                  if (item.name.toLowerCase().match(search.toLowerCase())) {
+                                    return item.name.toLowerCase().includes(search.toLowerCase())
+                                  } else if (item.price.toString().match(search.toString())) {
+                                    return item.price.toString().includes(search.toString())
+                                  } else if (
+                                    item.vendorId.toLowerCase().match(search.toLowerCase())
+                                  ) {
+                                    return item.vendorId
+                                      .toLowerCase()
+                                      .includes(search.toLowerCase())
+                                  } else if (item.quantity.toString().match(search.toString())) {
+                                    return item.quantity.toString().includes(search.toString())
+                                  } else if (
+                                    item.productDescription
+                                      .toLowerCase()
+                                      .match(search.toLowerCase())
+                                  ) {
+                                    return item.productDescription
+                                      .toLowerCase()
+                                      .includes(search.toLowerCase())
+                                  } else if (
+                                    item.category.toLowerCase().match(search.toLowerCase())
+                                  ) {
+                                    return item.category
+                                      .toLowerCase()
+                                      .includes(search.toLowerCase())
+                                  }
+                                }
+                              })
+                              .slice(itemOffset, endOffset)
+                              .map((item, index) => (
+                                <tr key={index}>
+                                  <td>{endOffset - itemsPerPage + index + 1}</td>
+                                  <td>{item.name}</td>
+                                  <td>{item.price}</td>
+                                  <td>{item.vendorId}</td>
+                                  <td>{item.quantity}</td>
+                                  <td>{item.productDescription}</td>
+                                  <td>{item.category}</td>
+                                </tr>
+                              ))
+                          ) : (
+                            <tr className="no-data">
+                              <td colSpan={8} align="center">
+                                No Product
+                              </td>
+                            </tr>
+                          )}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div className="react-paginate">
+                    <div className="pagination-deteils">
+                      <p>
+                        Showing {endOffset - itemsPerPage + 1} to{" "}
+                        {items.length >= endOffset ? endOffset : items.length} of {items.length}{" "}
+                        entries
+                      </p>
+                    </div>
+                    <ReactPaginate
+                      breakLabel="..."
+                      nextLabel="Next"
+                      onPageChange={handlePageClick}
+                      pageRangeDisplayed={5}
+                      pageCount={pageCount}
+                      previousLabel="Previous"
+                      renderOnZeroPageCount={null}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

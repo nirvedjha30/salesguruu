@@ -2,7 +2,12 @@
 import dynamic from "next/dynamic"
 import "chart.js/auto"
 import "./../styles/linechart.css"
+import { useEffect, useState } from "react"
 export default function LineChart(props) {
+  // ========================Chart Loading==============================
+  const [chartLoad, setChartLoad] = useState(false)
+  // ===================================================================
+
   const Line = dynamic(() => import("react-chartjs-2").then((mod) => mod.Line), {
     ssr: false,
   })
@@ -19,6 +24,14 @@ export default function LineChart(props) {
     ],
   }
 
+  useEffect(() => {
+    if (localStorage.getItem("id")) {
+      setTimeout(() => {
+        setChartLoad(true)
+      }, 1000)
+    }
+  })
+
   return (
     <div className="linechart">
       <div className="linechartTitleSection">
@@ -28,7 +41,7 @@ export default function LineChart(props) {
       </div>
       <div className="linechartChartSection">
         <div className="linechartChartInnerSection">
-          <Line data={linechartdata} />
+        {chartLoad ? <Line data={linechartdata} /> : ""}
         </div>
       </div>
     </div>
